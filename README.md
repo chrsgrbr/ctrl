@@ -3,7 +3,7 @@
 This is a (hopefully) growing collection of custom Indesign scripts that utilize randomness.
 
 
-_Feel free to (mis)use them according to your needs._
+Feel free to (mis)use them according to your needs.
 
 
 ------
