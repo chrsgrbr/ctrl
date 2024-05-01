@@ -1,14 +1,12 @@
-# ctrl
+# ctrl 🎲
 
 This is a (hopefully) growing collection of custom Indesign scripts that utilize randomness.
-They are small experiments applied during my research on the subject of control.
 
 
-Feel free to (mis)use them according to your needs.
+_Feel free to (mis)use them according to your needs._
 
 
-
-*Details:* 
+------
 
 
 **Random Baseline Offset:**
