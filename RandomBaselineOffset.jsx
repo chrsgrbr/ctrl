@@ -12,19 +12,22 @@ function randomizeBaselineShift() {
 
     var dialogBox = app.dialogs.add({ name: "Random Baseline Offset" });
 
-    var minValueInput = dialogBox.dialogColumns.add().textEditboxes.add({
+    var dialogColumn = dialogBox.dialogColumns.add();
+    var minValueInput = dialogColumn.textEditboxes.add({
         minWidth: 100,
-        editContents: "Min Value"
+        editContents: "0", // Set default minimum value
+        editLabel: "Min Value:"
     });
 
-    var maxValueInput = dialogBox.dialogColumns.add().textEditboxes.add({
+    var maxValueInput = dialogColumn.textEditboxes.add({
         minWidth: 100,
-        editContents: "Max Value"
+        editContents: "10", // Set default maximum value
+        editLabel: "Max Value:"
     });
 
     if (dialogBox.show() === true) {
-        var minValue = parseInt(minValueInput.editContents);
-        var maxValue = parseInt(maxValueInput.editContents);
+        var minValue = parseInt(minValueInput.editContents, 10);
+        var maxValue = parseInt(maxValueInput.editContents, 10);
 
         if (!isNaN(minValue) && !isNaN(maxValue)) {
 
@@ -36,7 +39,6 @@ function randomizeBaselineShift() {
 
                     var randomBaselineShift = getRandomInt(minValue, maxValue);
 
-
                     textFrame.characters[i].baselineShift = randomBaselineShift;
                 }
 
@@ -47,6 +49,8 @@ function randomizeBaselineShift() {
         } else {
             alert("Invalid input. Please enter numeric values for Min Value and Max Value.");
         }
+    } else {
+        dialogBox.destroy(); // Clean up dialog if not used
     }
 }
 
